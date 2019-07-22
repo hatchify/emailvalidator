@@ -33,6 +33,10 @@ func TestEmailAddress_Validate(t *testing.T) {
 			err:          errors.Error("invalid character \"\"\" at index 1"),
 		},
 		{
+			emailAddress: "hello\\world@example.com",
+			err:          errors.Error("invalid character \"\\\" at index 5"),
+		},
+		{
 			emailAddress: "just\"not\"right@example.com",
 			err:          errors.Error("invalid character \"\"\" at index 4"),
 		},
