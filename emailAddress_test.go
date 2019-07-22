@@ -29,6 +29,14 @@ func TestEmailAddress_Validate(t *testing.T) {
 			err:          errors.Error("\"hatchifyco\" does not have a valid TLD"),
 		},
 		{
+			emailAddress: "@",
+			err:          ErrEmptyLocalPart,
+		},
+		{
+			emailAddress: "helloworld@",
+			err:          ErrEmptyDomain,
+		},
+		{
 			emailAddress: "a\"b(c)d,e:f;g<h>i[j\\k]l@example.com",
 			err:          errors.Error("invalid character \"\"\" at index 1"),
 		},
