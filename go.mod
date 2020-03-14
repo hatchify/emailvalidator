@@ -1,6 +1,6 @@
 module github.com/hatchify/emailvalidator
 
-go 1.13
+go 1.14
 
 require (
 	github.com/Hatch1fy/errors v0.3.0
