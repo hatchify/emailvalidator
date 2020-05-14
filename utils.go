@@ -3,14 +3,14 @@ package emailvalidator
 // Local part characters can be any of the following:
 //	- uppercase and lowercase Latin letters A to Z and a to z;
 //	- digits 0 to 9;
-//	- printable characters !#$%&'*+-/=?^_`{|}~;
+//	- .
 
 func isValidLocalPartChar(r rune) (ok bool) {
 	switch {
 	case isLowercaseAlpha(r):
 	case isUppercaseAlpha(r):
 	case isDigit(r):
-	case isPrintableChar(r):
+	case isAllowedSpecialChar(r):
 
 	default:
 		return false
@@ -111,30 +111,8 @@ func isDigit(r rune) (ok bool) {
 	return true
 }
 
-func isPrintableChar(r rune) (ok bool) {
+func isAllowedSpecialChar(r rune) (ok bool) {
 	switch r {
-	case '!':
-	case '#':
-	case '$':
-	case '%':
-	case '&':
-	case '\'':
-	case '*':
-	case '+':
-	case '-':
-	case '/':
-	case '=':
-	case '?':
-	case '^':
-	case '_':
-	case '`':
-	case '{':
-	case '|':
-	case '}':
-	case '~':
-
-	// Although dot isn't in the printable char's list, it's technically a valid char
-	// We will do the dot logic in another func
 	case '.':
 
 	default:
