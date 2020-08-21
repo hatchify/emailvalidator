@@ -3,7 +3,7 @@ package emailvalidator
 import (
 	"testing"
 
-	"github.com/Hatch1fy/errors"
+	"github.com/hatchify/errors"
 )
 
 func TestNewEmailAddress(t *testing.T) {

@@ -1,6 +1,6 @@
 package emailvalidator
 
-import "github.com/Hatch1fy/errors"
+import "github.com/hatchify/errors"
 
 const (
 	// ErrEmptyLocalPart is returned when a local part is empty
