@@ -25,6 +25,22 @@ func TestEmailAddress_Validate(t *testing.T) {
 			err:          nil,
 		},
 		{
+			emailAddress: "John_Doe@example.com",
+			err:          nil,
+		},
+		{
+			emailAddress: "John__Doe@example.com",
+			err:          nil,
+		},
+		{
+			emailAddress: "_John_Doe@example.com",
+			err:          nil,
+		},
+		{
+			emailAddress: "John_Doe_@example.com",
+			err:          nil,
+		},
+		{
 			emailAddress: "engineering@hatchifyco",
 			err:          errors.Error("\"hatchifyco\" does not have a valid TLD"),
 		},

@@ -114,6 +114,7 @@ func isDigit(r rune) (ok bool) {
 func isAllowedSpecialChar(r rune) (ok bool) {
 	switch r {
 	case '.':
+	case '_':
 
 	default:
 		return false
